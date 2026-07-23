@@ -204,6 +204,49 @@ h1,h2,h3,h4{ margin:0; color:var(--navy); font-weight:700; letter-spacing:-.01em
 .recap div{ font-size:8pt; color:#DCE5F2; padding-left:6mm; position:relative; line-height:1.4;}
 .recap div::before{ content:""; position:absolute; left:0; top:1.6mm; width:9px;height:9px;border-radius:2px; background:var(--gold-bright);}
 .recap b{color:#fff;}
+
+/* ============ WORKED-EXAMPLE STORYLINE ============ */
+.illus{ display:inline-block; font-size:6.6pt; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); background:var(--gold-soft); border:1px solid #F0E2B8; border-radius:20px; padding:2px 9px; vertical-align:middle;}
+.story{ position:relative; margin-top:6mm; padding-left:10mm;}
+.story::before{ content:""; position:absolute; left:3.2mm; top:3mm; bottom:3mm; width:2px; background:linear-gradient(180deg,var(--navy),var(--gold-bright)); border-radius:2px;}
+.snode{ position:relative; margin-bottom:2.8mm;}
+.snode:last-child{ margin-bottom:0;}
+.snode .dot{ position:absolute; left:-10mm; top:1mm; width:6.6mm;height:6.6mm;border-radius:50%; background:#fff; border:2px solid var(--navy); color:var(--navy); font-size:7pt;font-weight:800; display:flex;align-items:center;justify-content:center; box-shadow:0 0 0 2.5px #fff;}
+.snode.gold .dot{ border-color:var(--gold); color:var(--gold);}
+.snode.green .dot{ border-color:var(--green); color:#fff; background:var(--green);}
+.scard{ border:1px solid var(--line); border-radius:8px; padding:2.6mm 3.6mm; background:#fff; display:flex; justify-content:space-between; gap:5mm; align-items:center;}
+.scard .st{ font-size:8.6pt; font-weight:700; color:var(--navy);}
+.scard .st .day{ font-size:6.4pt; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-right:6px;}
+.scard .sd{ font-size:7.6pt; color:#4A5666; font-weight:500; line-height:1.4; margin-top:.8mm;}
+.scard .rt{ flex:0 0 auto;}
+.actor{ font-size:6.2pt; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:20px; white-space:nowrap;}
+.a-engine{ background:#EAF0F8; color:var(--navy2);} .a-mel{ background:var(--gold-soft); color:#8A5300;} .a-prospect{ background:var(--green-soft); color:var(--green);}
+
+/* ============ EMAIL MOCK + DO/DON'T ============ */
+.email{ border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 6px 18px -14px rgba(27,54,93,.3);}
+.email .ehead{ background:linear-gradient(180deg,#FCFBF8,#F4F2EB); border-bottom:1px solid var(--line); padding:3mm 4mm; font-size:7.2pt; color:var(--muted); line-height:1.7;}
+.email .ehead b{ color:var(--navy); font-weight:700;}
+.email .ebody{ padding:3.8mm 4mm 2mm; font-size:8pt; color:#33404F; line-height:1.5;}
+.email .ebody p{ margin:0 0 1mm;}
+.email .arow{ margin:0 0 2.6mm; }
+.ann{ display:block; font-size:6.6pt; color:var(--gold); font-weight:700; letter-spacing:.02em; margin-top:.4mm;}
+.dodont{ display:flex; flex-direction:column; gap:2.1mm;}
+.dd{ display:flex; gap:2.8mm; align-items:flex-start; font-size:8pt; color:#33404F; font-weight:500; line-height:1.35;}
+.dd .mk{ flex:0 0 auto; width:4.8mm;height:4.8mm;border-radius:50%; display:flex;align-items:center;justify-content:center; margin-top:.2mm;}
+.dd .yes{ background:var(--green-soft);} .dd .no{ background:var(--rose-soft);}
+.dd b{ color:var(--navy); font-weight:700;}
+
+/* ============ FUNNEL-MATH (IMPACT) ============ */
+.fmath{ display:flex; flex-direction:column; gap:0; margin-top:6mm;}
+.fm{ display:flex; align-items:center; gap:5mm; padding:3mm 5mm; border:1px solid var(--line); border-radius:10px; background:#fff;}
+.fm.real{ border-left:4px solid var(--navy);} .fm.assume{ border-left:4px solid var(--gold);} .fm.win{ border-left:4px solid var(--green); background:linear-gradient(90deg,#F5FBF4,#fff);}
+.fm .fmn{ font-size:16pt; font-weight:800; color:var(--navy); width:36mm; letter-spacing:-.015em; white-space:nowrap;}
+.fm.win .fmn{ color:var(--green);}
+.fm .fml{ font-size:8pt; color:#404C5B; font-weight:500; line-height:1.35;}
+.fm .fml b{ color:var(--navy);}
+.fm .fmt{ margin-left:auto; flex:0 0 auto;}
+.fmarrow{ height:3.4mm; display:flex; align-items:center; justify-content:center;}
+.fmarrow svg{display:block;}
 </style>
 </head>
 <body>
@@ -693,12 +736,125 @@ h1,h2,h3,h4{ margin:0; color:var(--navy); font-weight:700; letter-spacing:-.01em
   </div>
 </section>
 
-<!-- ==================== PAGE 8 : WHAT IT MEANS FOR MEL + CLOSE ==================== -->
+<!-- ==================== PAGE 8 : WORKED EXAMPLE ==================== -->
+<section class="page">
+  <div class="pad">
+    <div class="rh"><span>FOX RevOps <span class="dot"></span> Reengage &amp; Nurture Architecture</span><span>Worked example</span></div>
+
+    <div class="eyebrow">07 &nbsp;/&nbsp; Worked example &nbsp;&nbsp;<span class="illus">Illustrative</span></div>
+    <h2 class="h-sec">One prospect, start to finish.</h2>
+    <div class="kicker-rule"></div>
+    <p class="h-sub">A single family office moving through the engine end to end. Names are composite &mdash; the mechanics are exactly what every FO prospect follows.</p>
+
+    <div class="story">
+      <div class="snode"><div class="dot">T</div><div class="scard"><div><div class="st"><span class="day">Trigger</span>A dormant membership surfaces</div><div class="sd">A single-family office let its FOX membership lapse about two years ago. The Housekeeper flags the record as it crosses the stale threshold.</div></div><div class="rt"><span class="actor a-engine">Housekeeper</span></div></div></div>
+      <div class="snode"><div class="dot">1</div><div class="scard"><div><div class="st">Scored &amp; segmented</div><div class="sd">The weekly run stamps a <b>Tier&nbsp;B</b> priority; cohort logic files it as <b>dropped-mid, FO</b> &mdash; so it routes to you, into Sequence&nbsp;6.</div></div><div class="rt"><span class="actor a-engine">Engine</span></div></div></div>
+      <div class="snode"><div class="dot">2</div><div class="scard"><div><div class="st">Cleared through the gates</div><div class="sd">Not unsubscribed, not a current member, no attempts yet this quarter &mdash; cleared to enroll.</div></div><div class="rt"><span class="actor a-engine">Gates</span></div></div></div>
+      <div class="snode gold"><div class="dot">3</div><div class="scard"><div><div class="st">Drafted &amp; fact-checked</div><div class="sd">The Writer drafts Touch&nbsp;1 grounded in the old membership history; the accuracy loop verifies every fact before it reaches you.</div></div><div class="rt"><span class="actor a-engine">Writer</span></div></div></div>
+      <div class="snode gold"><div class="dot">4</div><div class="scard"><div><div class="st"><span class="day">Day 1</span>You approve &amp; send the opener</div><div class="sd">You review the note that acknowledges the history, approve it, and it sends under your name.</div></div><div class="rt"><span class="actor a-mel">Mel</span></div></div></div>
+      <div class="snode gold"><div class="dot">5</div><div class="scard"><div><div class="st"><span class="day">Day 4</span>Touch 2 staged</div><div class="sd">A specific &ldquo;what&rsquo;s changed at FOX&rdquo; angle is staged for your approval.</div></div><div class="rt"><span class="actor a-mel">Mel</span></div></div></div>
+      <div class="snode gold"><div class="dot">6</div><div class="scard"><div><div class="st"><span class="day">Day 9</span>Touch 3 lands</div><div class="sd">They open it twice; no reply yet. The cadence holds &mdash; no extra nudges, no pestering.</div></div><div class="rt"><span class="actor a-mel">Mel</span></div></div></div>
+      <div class="snode green"><div class="dot">7</div><div class="scard"><div><div class="st"><span class="day">Day 12</span>They reply</div><div class="sd">&ldquo;Curious what&rsquo;s new since we left.&rdquo; A positive signal trips the outcome fork.</div></div><div class="rt"><span class="actor a-prospect">Prospect</span></div></div></div>
+      <div class="snode green"><div class="dot">&#10003;</div><div class="scard"><div><div class="st">Warm handoff to you</div><div class="sd">The sequence pauses automatically, a deal opens at <b>Discovery</b>, and the conversation is yours to run.</div></div><div class="rt"><span class="actor a-mel">Mel</span></div></div></div>
+    </div>
+
+    <div class="callout" style="margin-top:6mm;">
+      <div class="ct">The point</div>
+      <div class="cx">From a dormant record to a <b>warm discovery call in under two weeks</b> &mdash; no cold pitch, because they already know FOX. You touched it three times, all pre-drafted and fact-checked; the engine did everything else.</div>
+    </div>
+
+    <div class="rf"><span>Reengage &amp; Nurture Strategy Architecture</span><span><b>FOX RevOps</b> &nbsp;·&nbsp; <span class="pgnum">08</span></span></div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 9 : HOW THE EMAILS ARE WRITTEN ==================== -->
+<section class="page">
+  <div class="pad">
+    <div class="rh"><span>FOX RevOps <span class="dot"></span> Reengage &amp; Nurture Architecture</span><span>The craft</span></div>
+
+    <div class="eyebrow">08 &nbsp;/&nbsp; The craft</div>
+    <h2 class="h-sec">How every email is written.</h2>
+    <div class="kicker-rule"></div>
+    <p class="h-sub">Two things earn the right to talk to someone who already knows FOX: it has to be accurate, and it has to sound like you. Both are enforced before anything reaches your queue.</p>
+
+    <div class="grid2" style="margin-top:6.5mm; align-items:start;">
+      <div class="card" style="padding:5mm 5mm;">
+        <div class="eyebrow" style="font-size:7.4pt;">The rules of the house</div>
+        <h3 style="font-size:11pt; margin-top:2mm; margin-bottom:4mm;">Enforced on every draft</h3>
+        <div class="dodont">
+          <div class="dd"><div class="mk yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div><div><b>One clear ask</b> per email &mdash; a single, low-friction next step</div></div>
+          <div class="dd"><div class="mk yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div><div><b>Grounded in the real record</b> &mdash; never an invented fact</div></div>
+          <div class="dd"><div class="mk yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div><div>A <b>short, specific subject</b> line</div></div>
+          <div class="dd"><div class="mk yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div><div>Signed <b>&ldquo;Best Regards, Mel Simms&rdquo;</b></div></div>
+          <div class="dd"><div class="mk no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9E3B3B" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div>No <b>&ldquo;just checking in&rdquo;</b> or <b>&ldquo;circling back&rdquo;</b></div></div>
+          <div class="dd"><div class="mk no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9E3B3B" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div>No <b>&ldquo;pitch,&rdquo; &ldquo;sell,&rdquo; &ldquo;unlock value,&rdquo; &ldquo;synergy&rdquo;</b></div></div>
+          <div class="dd"><div class="mk no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9E3B3B" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div>No exclamation points, no emojis</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow" style="font-size:7.4pt;">Anatomy of a first touch &nbsp;<span class="illus">Illustrative</span></div>
+        <div class="email" style="margin-top:3mm;">
+          <div class="ehead">To: &nbsp;<b>Principal, a family office</b><br/>From: &nbsp;<b>Mel Simms</b>, FOX<br/>Subject: &nbsp;<b>What&rsquo;s changed at FOX since 2024</b></div>
+          <div class="ebody">
+            <div class="arow"><p>When your family office stepped away from FOX in 2024, the peer network looked different than it does now.</p><span class="ann">Opens on the shared history, not &ldquo;just checking in&rdquo;</span></div>
+            <div class="arow"><p>Two things are new that line up with what you were weighing then: a direct-investing peer group and the operating-family cohort.</p><span class="ann">One specific value angle, grounded in the record</span></div>
+            <div class="arow"><p>Worth fifteen minutes to compare notes?</p><span class="ann">A single, low-friction ask</span></div>
+            <div class="arow"><p style="margin-bottom:0;">Best Regards,<br/>Mel Simms</p><span class="ann">Your sign-off, applied automatically</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:6.5mm;">
+      <div class="ct">It always sounds like the right person</div>
+      <div class="cx">Each rep has their own signature and rules, applied automatically: <b>Dave</b> signs &ldquo;Best, Dave Blide&rdquo;; <b>Miguel</b> writes in his voice and never includes a scheduling link. You never inherit someone else&rsquo;s style &mdash; and you always have the final edit.</div>
+    </div>
+
+    <div class="rf"><span>Reengage &amp; Nurture Strategy Architecture</span><span><b>FOX RevOps</b> &nbsp;·&nbsp; <span class="pgnum">09</span></span></div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 10 : IMPACT MODEL ==================== -->
+<section class="page">
+  <div class="pad">
+    <div class="rh"><span>FOX RevOps <span class="dot"></span> Reengage &amp; Nurture Architecture</span><span>The upside</span></div>
+
+    <div class="eyebrow">09 &nbsp;/&nbsp; The upside &nbsp;&nbsp;<span class="illus">Illustrative model</span></div>
+    <h2 class="h-sec">What the back-book is worth.</h2>
+    <div class="kicker-rule"></div>
+    <p class="h-sub">A way to think about the upside, not a forecast. The pool and the 9% pipeline win rate are real; the middle conversion rates are yours to set. Re-engagement is already the #3 deal source with 134 live deals &mdash; this is that same motion at full coverage.</p>
+
+    <div class="fmath">
+      <div class="fm real"><div class="fmn">2,153</div><div class="fml"><b>Active re-engagement pool</b> &mdash; segmented across the live lanes</div><div class="fmt"><span class="tag tag-navy">Actual</span></div></div>
+      <div class="fmarrow"><svg width="18" height="14"><line x1="9" y1="0" x2="9" y2="7" stroke="#C7C0AE" stroke-width="2"/><path d="M4 6 L9 12 L14 6" fill="none" stroke="#1B365D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fm real"><div class="fmn">~2,145</div><div class="fml"><b>Contacted</b> at ~99.6% coverage across Batches 1 &amp; 2</div><div class="fmt"><span class="tag tag-navy">Actual</span></div></div>
+      <div class="fmarrow"><svg width="18" height="14"><line x1="9" y1="0" x2="9" y2="7" stroke="#C7C0AE" stroke-width="2"/><path d="M4 6 L9 12 L14 6" fill="none" stroke="#B26A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fm assume"><div class="fmn">64&ndash;129</div><div class="fml"><b>Positive replies</b> at a 3&ndash;6% reply rate</div><div class="fmt"><span class="tag tag-amber">Your assumption</span></div></div>
+      <div class="fmarrow"><svg width="18" height="14"><line x1="9" y1="0" x2="9" y2="7" stroke="#C7C0AE" stroke-width="2"/><path d="M4 6 L9 12 L14 6" fill="none" stroke="#B26A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fm assume"><div class="fmn">38&ndash;77</div><div class="fml"><b>Discovery calls</b> at ~60% of positive replies</div><div class="fmt"><span class="tag tag-amber">Your assumption</span></div></div>
+      <div class="fmarrow"><svg width="18" height="14"><line x1="9" y1="0" x2="9" y2="7" stroke="#C7C0AE" stroke-width="2"/><path d="M4 6 L9 12 L14 6" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fm win"><div class="fmn">3&ndash;7</div><div class="fml"><b>New members per full-pool cycle</b> at the actual 9.0% pipeline win rate</div><div class="fmt"><span class="tag tag-green">Actual rate</span></div></div>
+    </div>
+
+    <div class="mini-tiles" style="margin-top:7mm;">
+      <div class="mtile"><div class="n">134</div><div class="l">re-engage deals already live in the pipeline today</div></div>
+      <div class="mtile"><div class="n">#3</div><div class="l">deal source in 2026 &mdash; ahead of referral and event</div></div>
+      <div class="mtile"><div class="n">$544K</div><div class="l">FO Membership won YTD &mdash; the value one new member carries</div></div>
+    </div>
+
+    <p class="note" style="margin-top:6mm;">Set your own reply and conversion rates and the funnel recomputes. The point isn&rsquo;t the exact number &mdash; it&rsquo;s that a pool of <b style="color:var(--navy);">2,153 people who already know FOX</b> is being worked systematically for the first time, on top of everything inbound already delivers.</p>
+
+    <div class="rf"><span>Reengage &amp; Nurture Strategy Architecture</span><span><b>FOX RevOps</b> &nbsp;·&nbsp; <span class="pgnum">10</span></span></div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 11 : WHAT IT MEANS FOR MEL + CLOSE ==================== -->
 <section class="page">
   <div class="pad">
     <div class="rh"><span>FOX RevOps <span class="dot"></span> Reengage &amp; Nurture Architecture</span><span>The takeaway</span></div>
 
-    <div class="eyebrow">07 &nbsp;/&nbsp; The takeaway</div>
+    <div class="eyebrow">10 &nbsp;/&nbsp; The takeaway</div>
     <h2 class="h-sec">What this means for you, Mel.</h2>
     <div class="kicker-rule"></div>
 
@@ -734,7 +890,7 @@ h1,h2,h3,h4{ margin:0; color:var(--navy); font-weight:700; letter-spacing:-.01em
       </div>
     </div>
 
-    <div class="rf"><span>FOX RevOps &mdash; CEO Command Center &nbsp;·&nbsp; Reengage &amp; Nurture Strategy Architecture</span><span><b>FOX RevOps</b> &nbsp;·&nbsp; <span class="pgnum">08</span></span></div>
+    <div class="rf"><span>FOX RevOps &mdash; CEO Command Center &nbsp;·&nbsp; Reengage &amp; Nurture Strategy Architecture</span><span><b>FOX RevOps</b> &nbsp;·&nbsp; <span class="pgnum">11</span></span></div>
   </div>
 </section>
 
