@@ -37,6 +37,21 @@ warmest-first, without ever touching a recently-dropped member.
 - New sequences observed 2026-07-29, NOT yet in the canon (decide + update here):
   - `#114 Mel Denver Dropped Member Reengage Invite - FOWAF` (Mel; contains **auto_email** steps — first automation in the family)
   - `#113 Mel Los Angeles Regional Reengage` (owner Jake)
+
+### ⚠️ 2026-07-29 (evening): NEW segment-differentiated architecture live — #116–121 (owner Jake)
+| ID | Sequence | Intended cohort (inferred from name) | Steps |
+|---|---|---|---|
+| 116 | `FOX_REENG_2026_RECENT_Mel` | Mel dropped-recent | 1 manual + 4 **auto** |
+| 117 | `FOX_REENG_2026_LONG_Mel` | Mel dropped mid/deep | 1 manual + 5 **auto** |
+| 118 | `FOX_REENG_2026_LONG_Dave` | Dave dropped mid/deep | 1 manual + 4 **auto** |
+| 119 | `FOX_PROSPECT_REENG_2026_Mel` | Mel cold-inbound / dead-referral | 1 manual + 6 **auto** |
+| 120 | `FOX_PROSPECT_REENG_2026_Dave` | Dave cold-inbound / dead-referral | 1 manual + 5 **auto** |
+| 121 | `FOX_PROSPECT_REENG_2026_Miguel` | Miguel all-INT prospects | 1 manual + 5 **auto** |
+
+Mass enrollment observed 2026-07-28 ~22:02 UTC into #119 (audit in
+`enrollment_reconcile.json`, scratch). **These carry auto_email steps — enrollment = sending.**
+OPEN DECISION: #116–121 vs #107–109 as canon. Until decided, the send-list CSVs keep
+mapping to #107/108/109 (manual, safe); do NOT dual-enroll a contact in both families.
 - Do **not** create new reengage sequences without recording them here.
 
 ## 4. Non-negotiable rules
