@@ -70,19 +70,18 @@ warmest-first, without ever touching a recently-dropped member.
 Columns include `Email Status` + `Clay Suggested Email` (verification), persona, segment,
 sequence mapping, HubSpot ID/URL. **First wave = top 150 rows of each file.**
 
-### Email verification state (first wave, 450 contacts)
+### Email verification state (first wave, 450 contacts) — COMPLETE 2026-07-29
 | Status | Count | Meaning |
 |---|---|---|
-| Verified ✓ | 47 | Clay independently confirmed the address |
-| Review — newer address found | 8 | Clay found a DIFFERENT address → see `FOX_Reengage_EMAIL_REVIEW.csv`; swap before sending |
+| Verified ✓ | 96 | Clay independently confirmed the address |
+| Review — newer address found | 13 | Clay found a DIFFERENT address → see `FOX_Reengage_EMAIL_REVIEW.csv`; swap before sending |
 | Personal domain (stable) | 41 | gmail/icloud etc. — not corp-verifiable, low staleness risk |
-| Unconfirmed (HubSpot hygiene only) | 150 | Clay couldn't source; protected by bounce/opt-out gates only |
-| Pending | 204 | Clay searches paid & submitted; results being recovered (chunks 1–3) |
+| Unconfirmed (HubSpot hygiene only) | 300 | Clay couldn't source; protected by bounce/opt-out gates only |
 
 Everything below row 150 per list = `Tail — not yet verified`.
 
-### Clay ledger (paid searches — pull results, never resubmit)
-Chunks 1–3 taskIds (recovery in progress):
+### Clay ledger (paid searches — results retrieved 2026-07-29, never resubmit)
+Chunks 1–3 taskIds (RECOVERED ✅):
 `mcp-task_0tip654op575wVqvmxz` `mcp-task_0tip6578ri878d8XmY5` `mcp-task_0tip65gzRY8efqCVhYV`
 `mcp-task_0tip65hsSCPno3psPxa` `mcp-task_0tip65urp8y2smgSted` `mcp-task_0tip65xVo2H9Nm5KVxk`
 `mcp-task_0tip666EyNqTXQJZUsK` `mcp-task_0tip666hyNkathordHE` `mcp-task_0tip66hFqjvpKuP8eSM`
@@ -106,8 +105,10 @@ Chunks 1–3 taskIds (recovery in progress):
 
 ## 8. Open items
 
-- [ ] Recover Clay chunks 1–3 → fold into lists → 0 "Pending" (in progress, Claude)
-- [ ] Human review of the 8 corrected addresses (`FOX_Reengage_EMAIL_REVIEW.csv`) → swap in HubSpot
+- [x] Recover Clay chunks 1–3 → fold into lists → 0 "Pending" (done 2026-07-29)
+- [ ] Human review of the 13 corrected addresses (`FOX_Reengage_EMAIL_REVIEW.csv`) → swap in HubSpot
+      (3 are job moves — McDonald→AWM Associates, Arora→My Three Rocks, Greene→Sterling Seacrest
+      Pritchard, Brutten→Brixton — confirm still in-persona before sending)
 - [ ] Decide canon status of new sequences #113/#114 (esp. #114's auto_email steps)
 - [ ] Create `hs_persona` options in HubSpot → run persona import (854)
 - [ ] Write Clay verification results to `engine_email_validation_status` in HubSpot
