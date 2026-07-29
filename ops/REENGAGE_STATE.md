@@ -48,10 +48,17 @@ warmest-first, without ever touching a recently-dropped member.
 | 120 | `FOX_PROSPECT_REENG_2026_Dave` | Dave cold-inbound / dead-referral | 1 manual + 5 **auto** |
 | 121 | `FOX_PROSPECT_REENG_2026_Miguel` | Miguel all-INT prospects | 1 manual + 5 **auto** |
 
-Mass enrollment observed 2026-07-28 ~22:02 UTC into #119 (audit in
-`enrollment_reconcile.json`, scratch). **These carry auto_email steps — enrollment = sending.**
+**Enrollment audit 2026-07-29** (`ops/data/FOX_Outreach_Enrollment_Audit_2026-07-29.json`):
+222 enrollments since Jul 27 — #117: 142 (75% on approved lists) · #119: 58 (**only 9% on
+approved lists** — cohort source unknown, reconcile before more sends) · #116: 16 (38%) ·
+6 inbound (expected). **Action taken:** Wendy Gartenberg (ANOMALIES: Never-a-Member
+mis-tagged as dropped) was enrolled in #117 at an auto_email step — sequence state 7274
+destroyed 2026-07-29, verified removed. No Current Members found enrolled.
+**These sequences carry auto_email steps — enrollment = sending.**
 OPEN DECISION: #116–121 vs #107–109 as canon. Until decided, the send-list CSVs keep
 mapping to #107/108/109 (manual, safe); do NOT dual-enroll a contact in both families.
+Enrollees must come FROM the AVAILABLE lists (enriched + verified + hold-checked) —
+#119's 53 off-list enrollees bypassed that pipeline.
 - Do **not** create new reengage sequences without recording them here.
 
 ## 4. Non-negotiable rules
