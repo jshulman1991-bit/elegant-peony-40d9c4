@@ -52,7 +52,9 @@ warmest-first, without ever touching a recently-dropped member.
    no Current Members / Never-a-Member records.
 3. **Priority order** (lists are pre-sorted): segment warmth
    (dropped-recent → cold-inbound → dead-referral → dropped-mid → dropped-deep)
-   → prospect score desc → titled-first → last name. Reps work top-down, 30/day.
+   → **family tier (Wealth Owner → Rising Gen → other)** → prospect score desc →
+   titled-first → last name. Reps work top-down, 30/day. Segments recomputed from real
+   Dynamics drop dates where present. Personal domains rank normally (SFO principals use them).
 4. **Personas (8):** Family Principal / Wealth Owner · FO Executive · FO Investment/Finance ·
    FO Operations/Admin · **Investment Advisor · Wealth Advisor · Specialist Advisor**
    (advisor split is mandatory — "Specialist" = every advisor that isn't the first two) ·
@@ -61,12 +63,19 @@ warmest-first, without ever touching a recently-dropped member.
 
 ## 5. Send lists (deliverables) — `ops/data/`
 
-| File | Rep | Rows | Target sequence |
-|---|---|---|---|
-| `FOX_Reengage_AVAILABLE_Mel_Simms.csv` | Mel | 1,590 | #107 |
-| `FOX_Reengage_AVAILABLE_Dave_Blide.csv` | Dave | 826 | #108 |
-| `FOX_Reengage_AVAILABLE_Miguel_Lopez_de_Silanes.csv` | Miguel | 254 | #109 |
+Rebuilt 2026-07-29 from the Dynamics sync (`family_member`, `is_primary_contact`, SFO/MFO,
+company drop dates). New columns: Family (Dynamics), Primary Contact, Office Type, Drop Date.
 
+| File | Rep | Rows | Wealth Owner / Rising Gen | Target sequence | Runway @30/day |
+|---|---|---|---|---|---|
+| `FOX_Reengage_AVAILABLE_Mel_Simms.csv` | Mel | 1,558 | 347 / 520 | #107 | 51 days |
+| `FOX_Reengage_AVAILABLE_Dave_Blide.csv` | Dave | 818 | 18 / 13 | #108 | 27 days |
+| `FOX_Reengage_AVAILABLE_Miguel_Lopez_de_Silanes.csv` | Miguel | 253 | 38 / 2 | #109 | **8 days — refill needed** |
+
+6-month hold re-audited against Dynamics drop dates (cutoff 2026-01-29): **0 breaches**;
+`FOX_Reengage_HOLD_under6mo.csv` is the standing RM-gated hold file (currently empty).
+`FOX_Reengage_ANOMALIES.csv`: 46 excluded (Current Members / Never-a-Member in dropped
+segments — surfaced by the Dynamics sync; do not reengage without review).
 Columns include `Email Status` + `Clay Suggested Email` (verification), persona, segment,
 sequence mapping, HubSpot ID/URL. **First wave = top 150 rows of each file.**
 
