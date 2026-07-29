@@ -24,13 +24,32 @@ warmest-first, without ever touching a recently-dropped member.
 
 **Rep owner IDs (HubSpot):** Mel Simms `81561781` · Dave Blide `79929567` · Miguel López de Silanes `79929566`
 
-## 3. Canonical Outreach sequences (the ONLY approved targets)
+## 3. Canonical Outreach sequences (per ecosystem ruling 2026-07-29)
 
-| Rep | Sequence | Outreach ID |
-|---|---|---|
-| Mel Simms | `FOX_2026_REENGAGE_FOWAF_FO_US_Mel` | **107** |
-| Dave Blide | `FOX_2026_REENGAGE_FOWAF_Advisor_MFO_US_Dave` | **108** |
-| Miguel López de Silanes | `FOX_2026_REENGAGE_FOWAF_INT_Miguel` | **109** |
+> **THIS FILE IS A MIRROR.** Operating canon = `C:\CFOX-RevOps\.claude\context\reengage-architecture.md`
+> + `ops/revops-runtime-manifest.json`; session activity logs to
+> `handoffs/CROSS-ACCOUNT-COORDINATION-LOG.md` in that repo. On conflict, the ecosystem repo wins.
+
+**#107/#108/#109 are FOWAF EVENT lanes — never enroll reengage lists there.** #114 barred
+(Jake ruling 2026-07-16). The reengage lanes (rep mailboxes: Mel 8 / Dave 7 / Miguel 5):
+
+| Seq | Name | Rep | Cohort |
+|---|---|---|---|
+| 116 | `FOX_REENG_2026_RECENT_Mel` | Mel | Recent dropped |
+| 117 | `FOX_REENG_2026_LONG_Mel` | Mel | Long dropped (mid+deep) |
+| 118 | `FOX_REENG_2026_LONG_Dave` | Dave | Long dropped (v4 copy live) |
+| 119 | `FOX_PROSPECT_REENG_2026_Mel` | Mel | Prospects (cold inbound + dead referral) |
+| 120 | `FOX_PROSPECT_REENG_2026_Dave` | Dave | Prospects (v4 copy live) |
+| 121 | `FOX_PROSPECT_REENG_2026_Miguel` | Miguel | Prospects (INT) |
+
+No lane yet (do NOT create shells): Dave dropped-recent (17 held PENDING), Miguel dropped
+members (188 held PENDING — blocked on Jake's two approved Miguel messaging tracks).
+Live constraints: all six enabled @30/day throttle; **117/118/120/121 throttle-paused pending
+Jake unpause**; validated-enrollment lane only (25/rep/week governor, triple-dedupe,
+rep-as-sequencer, manual Touch 1 human gate); suppression rules S1–S15 (canon file) apply.
+**Persona field of record = `functional_role`** (`hs_persona` RETIRED — writes rejected);
+write-back only via canonical `scripts/research_to_hubspot.py` (empty-only, read-back
+verified) — import file: `ops/data/FOX_Reengage_HubSpot_FunctionalRole_IMPORT.csv` (1,664 rows).
 
 - 2026-07-29 verification: the ~22 duplicate FOWAF sequences flagged in
   `ops/data/FOX_Outreach_Sequence_Cleanup.csv` are **no longer present** (archived). ✅
@@ -128,7 +147,7 @@ Chunks 1–3 taskIds (RECOVERED ✅):
 ## 7. Contract for every AI working this engine
 
 1. **Sync from this file first**; treat `ops/data/` CSVs as the canonical lists.
-2. **Never** add prospects to any sequence other than #107/#108/#109 without updating §3.
+2. **Never** add prospects to any sequence other than the §3 canonical lanes (#116–121) without updating canon.
 3. **Never** contact a <6-month drop. RM has final call on exceptions.
 4. **Log Clay spends** in §5's ledger (taskIds) so no search is ever paid twice.
 5. Changes to lists/rules/sequences ⇒ update this file **in the same commit/PR**.
