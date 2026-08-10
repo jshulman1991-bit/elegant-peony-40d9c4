@@ -80,6 +80,25 @@ Enrollees must come FROM the AVAILABLE lists (enriched + verified + hold-checked
 #119's 53 off-list enrollees bypassed that pipeline.
 - Do **not** create new reengage sequences without recording them here.
 
+### ⚠️ Stale artifact warning
+`ops/data/FOX_Outreach_Sequence_Cleanup.csv` (built 2026-07-24) classifies **116/117/119 as
+"ARCHIVE — superseded by #107/#108/#109"**. That is the OPPOSITE of the 2026-07-29 ecosystem
+ruling and is now wrong. The ruling wins: 116–121 are canon, 107–109 are FOWAF event lanes.
+Do not act on that CSV's sequence classifications.
+
+### Outreach API traps (cost us real defects — read before writing any harvest)
+1. **Page size caps at 30 regardless of `limit`.** Always read the response's `count` and
+   paginate by offset; trusting the returned array silently loses rows.
+2. **Multi-value `state` filters silently drop arms.** `state IN [finished,opted_out,bounced,
+   replied]` returned only bounced+opted_out. Query ONE state per call.
+3. **Derived vs persisted states.** replied/opened/clicked/contacted/delivered/no_reply are
+   derived and overlap persisted states; a row matching `replied` comes back reading
+   `"finished"`. Bucket by the state you queried, not the field returned.
+4. **`numActiveSequences = 0` does NOT mean "never contacted"** — a finished sequence leaves it
+   at 0. Gate on engagement (`engagedScore`/`engagedAt`/`touchedAt`) plus mail history, not
+   sequence states alone: Mel sends one-off manual mail that no sequence state records.
+5. **The `prospects` filter has a payload ceiling** — ~120 ids per call, not 490.
+
 ## 4. Non-negotiable rules
 
 1. **6-month drop hold.** A dropped member may not be contacted until ≥ 6 months after
