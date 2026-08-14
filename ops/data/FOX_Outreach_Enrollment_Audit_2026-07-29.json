@@ -1,0 +1,112 @@
+{
+ "per_sequence_counts": {
+  "119": {
+   "name": "FOX_PROSPECT_REENG_2026_Mel",
+   "count": 58
+  },
+  "43": {
+   "name": "Mel Simms Family/Commercial Inbound Inquiries",
+   "count": 3
+  },
+  "41": {
+   "name": "Dave Blide Commercial {Advisor, Sponsorship, Partnership} Inbound Inquiries",
+   "count": 3
+  },
+  "117": {
+   "name": "FOX_REENG_2026_LONG_Mel",
+   "count": 142
+  },
+  "116": {
+   "name": "FOX_REENG_2026_RECENT_Mel",
+   "count": 16
+  }
+ },
+ "total_recent": 222,
+ "list_overlap": {
+  "119": {
+   "in_lists": 5,
+   "not_in_lists": 53
+  },
+  "43": {
+   "in_lists": 0,
+   "not_in_lists": 3
+  },
+  "41": {
+   "in_lists": 0,
+   "not_in_lists": 3
+  },
+  "117": {
+   "in_lists": 107,
+   "not_in_lists": 35
+  },
+  "116": {
+   "in_lists": 6,
+   "not_in_lists": 10
+  }
+ },
+ "anomaly_matches": [
+  {
+   "name": "Wendy Gartenberg",
+   "seq_id": 117,
+   "issue": "Never a Member but in dropped segment"
+  }
+ ],
+ "sample_not_in_lists": {
+  "119": [
+   "Kevin Burke",
+   "Jay Lauf",
+   "Justin Weiss",
+   "Darrell Scott Haynes",
+   "Rich Bursek",
+   "Justyn Volesko",
+   "Andrew Cooper",
+   "Oliver Schwab",
+   "Jack Yates",
+   "Robert Gauntt",
+   "Donna Zandee",
+   "Nicole Belytschko",
+   "Jenchyn Luh",
+   "Drew Butler",
+   "Christopher Pavese"
+  ],
+  "43": [
+   "Marc Appel",
+   "Gerasimos Efthimiatos",
+   "Marci Masur"
+  ],
+  "41": [
+   "Jason Bovell",
+   "Dan Mules",
+   "Dariush Ruch-Kamgar"
+  ],
+  "117": [
+   "Debbie Goebel",
+   "Matt Bosch",
+   "Rana Salti",
+   "Patrick Scanlan",
+   "Alfred Levitt",
+   "Erin Danastasio",
+   "David Crane",
+   "Leo Corrigan IV",
+   "Alice Carruth",
+   "Drew Everett",
+   "Jennifer Holliday",
+   "Megan Ballin",
+   "Reggie Broussard",
+   "Ronald Miller",
+   "Stephen Bolin"
+  ],
+  "116": [
+   "Timon Malloy",
+   "Colby Kash",
+   "John Baker",
+   "Mike Mumola",
+   "Julie Gonzales",
+   "Stuart Adam",
+   "Kate Clapper",
+   "Frederick Bennett",
+   "Zachary Farber",
+   "Sandra Farber"
+  ]
+ }
+}
